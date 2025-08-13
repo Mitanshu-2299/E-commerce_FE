@@ -1,0 +1,23 @@
+.app-header[b-7mvh2j9gxf] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e2a38;
+    color: white;
+}
+
+.logo h1[b-7mvh2j9gxf] {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.nav-links a[b-7mvh2j9gxf] {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+    .nav-links a:hover[b-7mvh2j9gxf] {
+        text-decoration: underline;
+    }
