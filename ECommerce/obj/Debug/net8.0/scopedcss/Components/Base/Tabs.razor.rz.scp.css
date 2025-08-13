@@ -1,0 +1,28 @@
+.tabs[b-wmc42b25f8] {
+    border: 1px solid #ddd;
+}
+
+.tab-headers[b-wmc42b25f8] {
+    display: flex;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-header[b-wmc42b25f8] {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: #666;
+}
+
+    .tab-header.active[b-wmc42b25f8] {
+        border-bottom: 3px solid #2196f3;
+        color: #2196f3;
+        font-weight: 700;
+    }
+
+.tab-content[b-wmc42b25f8] {
+    padding: 15px;
+}

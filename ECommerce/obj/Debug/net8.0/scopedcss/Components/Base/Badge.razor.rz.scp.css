@@ -1,0 +1,24 @@
+.badge[b-1uoih8oate] {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+}
+
+.badge-primary[b-1uoih8oate] {
+    background-color: #2196f3;
+}
+
+.badge-success[b-1uoih8oate] {
+    background-color: #4caf50;
+}
+
+.badge-warning[b-1uoih8oate] {
+    background-color: #ff9800;
+}
+
+.badge-danger[b-1uoih8oate] {
+    background-color: #f44336;
+}

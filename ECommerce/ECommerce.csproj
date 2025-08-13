@@ -7,13 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Components\Accounts\Pages\" />
     <Folder Include="Components\Shared\" />
     <Folder Include="Data\Model\" />
     <Folder Include="Migration\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Repository\IRepository\" />
-    <Folder Include="Repository\Repository\" />
     <Folder Include="Service\Extesntion\" />
     <Folder Include="ViewModel\" />
     <Folder Include="wwwroot\images\" />

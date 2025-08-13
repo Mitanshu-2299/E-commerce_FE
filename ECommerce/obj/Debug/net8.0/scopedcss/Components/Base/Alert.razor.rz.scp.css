@@ -1,0 +1,35 @@
+.alert[b-soatmtrq1j] {
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin: 10px 0;
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.alert-info[b-soatmtrq1j] {
+    background-color: #2196f3;
+}
+
+.alert-success[b-soatmtrq1j] {
+    background-color: #4caf50;
+}
+
+.alert-warning[b-soatmtrq1j] {
+    background-color: #ff9800;
+}
+
+.alert-error[b-soatmtrq1j] {
+    background-color: #f44336;
+}
+
+.close-btn[b-soatmtrq1j] {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}

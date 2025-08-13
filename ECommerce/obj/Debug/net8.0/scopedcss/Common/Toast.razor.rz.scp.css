@@ -1,0 +1,36 @@
+.toast[b-hvueey6qi6] {
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 10px;
+    min-width: 200px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.toast-info[b-hvueey6qi6] {
+    background-color: #2196f3;
+}
+
+.toast-success[b-hvueey6qi6] {
+    background-color: #4caf50;
+}
+
+.toast-warning[b-hvueey6qi6] {
+    background-color: #ff9800;
+}
+
+.toast-error[b-hvueey6qi6] {
+    background-color: #f44336;
+}
+
+.close-btn[b-hvueey6qi6] {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

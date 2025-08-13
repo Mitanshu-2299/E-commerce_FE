@@ -1,0 +1,114 @@
+.page[b-hm33a3ewq5] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-hm33a3ewq5] {
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar[b-hm33a3ewq5] {
+    background-color: #1e1e2f; /* fallback color */
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    color: #fff;
+    height: 100%;
+}
+
+/* Top bar */
+.top-row[b-hm33a3ewq5] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: space-between;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+    .top-row[b-hm33a3ewq5]  a,
+    .top-row[b-hm33a3ewq5]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .top-row[b-hm33a3ewq5]  a:hover,
+        .top-row[b-hm33a3ewq5]  .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        .top-row[b-hm33a3ewq5]  a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+@media (max-width: 640.98px) {
+    .top-row[b-hm33a3ewq5] {
+        justify-content: space-between;
+    }
+
+        .top-row[b-hm33a3ewq5]  a,
+        .top-row[b-hm33a3ewq5]  .btn-link {
+            margin-left: 0;
+        }
+}
+
+@media (min-width: 641px) {
+    .page[b-hm33a3ewq5] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-hm33a3ewq5] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-hm33a3ewq5] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+        .top-row.auth[b-hm33a3ewq5]  a:first-child {
+            flex: 1;
+            text-align: right;
+            width: 0;
+        }
+
+    .top-row[b-hm33a3ewq5],
+    article[b-hm33a3ewq5] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+/* Page content area */
+.page-content[b-hm33a3ewq5] {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    flex: 1;
+}
+
+#blazor-error-ui[b-hm33a3ewq5] {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss[b-hm33a3ewq5] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
