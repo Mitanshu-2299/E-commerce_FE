@@ -3,6 +3,8 @@ using ECommerce.Components;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<ToastService>();
+
 builder.Services.AddRazorComponents();
 
 var app = builder.Build();

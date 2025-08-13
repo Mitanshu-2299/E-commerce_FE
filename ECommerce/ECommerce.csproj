@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Components\Accounts\Shared\" />
     <Folder Include="Components\Accounts\Pages\" />
     <Folder Include="Components\Shared\" />
     <Folder Include="Data\Model\" />
@@ -19,6 +18,11 @@
     <Folder Include="ViewModel\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="1.8.0" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.8.0" />
   </ItemGroup>
 
 </Project>
