@@ -1,48 +1,62 @@
 ﻿@page "/login"
+@using ECommerce.Data.Model
 @inject ECommerce.Service.API.AuthService.IAuthService AuthService
 @inject NavigationManager Navigation
+@inject IJSRuntime _jsRuntime
 
 <div class="container">
     <div class="login-section">
         <h2>Welcome Back!</h2>
-        <div class="form-group">
-            <label>Email</label>
-            <input @bind="email" type="email" class="form-control" placeholder="your@example.com" />
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input @bind="password" type="password" class="form-control" placeholder="Enter your password" />
-        </div>
 
-        @* <PrimaryButton Icon="bi bi-box-arrow-in-right"
-                       Disabled="@isProcessing"
-                       OnClick="@performLogin">
-            Sign In
-        </PrimaryButton> *@
-        <button class="btn btn-primary" @onclick="@performLogin" disabled="@isProcessing">
-           Sign In</button>
+        <EditForm Model="requestModel" OnValidSubmit="performLogin">
+            <DataAnnotationsValidator />
+           
 
+            <div class="form-group">
+                <label>Email</label>
+                <InputText @bind-Value="requestModel.Email"
+                           type="email"
+                           class="form-control"
+                           placeholder="your@example.com" />
+                <ValidationMessage For="@(() => requestModel.Email)" />
+            </div>
 
-        @if (!string.IsNullOrEmpty(loginError))
-        {
-            <div class="alert alert-danger mt-2">@loginError</div>
-        }
+            <div class="form-group">
+                <label>Password</label>
+                <InputText @bind-Value="requestModel.password"
+                           type="password"
+                           class="form-control"
+                           placeholder="Enter your password" />
+                <ValidationMessage For="@(() => requestModel.password)" />
+            </div>
 
-        <div class="extra-links">
+            <button class="btn btn-primary"
+                    type="submit"
+                    disabled="@isProcessing">
+                Sign In
+            </button>
+
+            @if (!string.IsNullOrEmpty(loginError))
+            {
+                <div class="alert alert-danger mt-2">@loginError</div>
+            }
+        </EditForm>
+
+        <div class="extra-links mt-3">
             <a href="#">Forgot password?</a>
         </div>
         <div class="signup-link">
             Don't have an account? <a href="#">Sign Up</a>
         </div>
     </div>
+
     <div class="image-section">
         <img src="/images/login.jpg" alt="People in a meeting" />
     </div>
 </div>
 
 @code {
-    private string email;
-    private string password;
+    private RequestModelDemo requestModel = new RequestModelDemo();
     private bool isProcessing = false;
     private string loginError;
 
@@ -50,23 +64,20 @@
     {
         isProcessing = true;
         loginError = string.Empty;
+
         try
         {
-            // Construct request using the correct model class name and proeperties (fix typo in LoginRequest)
             var request = new ECommerce.Model.AuthModel.LoginRequest
             {
-                Email = email,
-                password = password
+                Email = requestModel.Email,
+                password = requestModel.password
             };
 
             var response = await AuthService.LoginAsync(request);
 
             if (response != null && response.StatusCode == 200)
             {
-                // Example: store token somewhere (local storage or state)
-                var token = response.Data?.Token;
-
-                // For now, navigate to home or dashboard
+                // Example: store token or do post-login actions
                 Navigation.NavigateTo("/");
             }
             else

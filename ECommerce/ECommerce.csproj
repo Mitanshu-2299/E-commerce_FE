@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Components\Shared\" />
-    <Folder Include="Data\Model\" />
     <Folder Include="Migration\" />
     <Folder Include="Helpers\" />
     <Folder Include="Service\Extesntion\" />
