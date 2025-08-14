@@ -921,3 +921,95 @@ main[b-hm33a3ewq5] {
                 box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
             }
 /* _content/ECommerce/Components/Pages/Auth/Login.razor.rz.scp.css */
+.container[b-w45it5dslc] {
+    position: absolute;
+    top: 162px;
+    left: 272px;
+    width: 896px;
+    height: 576px;
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px #171a1f32, 0px 0px 2px #171a1f1f;
+    overflow: hidden;
+}
+
+.login-section[b-w45it5dslc] {
+    flex: 1 1 0;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+}
+
+    .login-section h2[b-w45it5dslc] {
+        margin-bottom: 32px;
+        font-size: 2rem;
+        font-family: 'Archivo', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+    }
+
+.form-group[b-w45it5dslc] {
+    margin-bottom: 16px;
+}
+
+    .form-group label[b-w45it5dslc] {
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+.form-control[b-w45it5dslc] {
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f7f7f7;
+}
+
+.sign-in-btn[b-w45it5dslc] {
+    width: 100%;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    height: 40px;
+    border-radius: 7px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    transition: background 0.2s;
+}
+
+    .sign-in-btn:hover[b-w45it5dslc] {
+        background: #4f46e5;
+    }
+
+.extra-links[b-w45it5dslc], .signup-link[b-w45it5dslc] {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+    .extra-links a[b-w45it5dslc],
+    .signup-link a[b-w45it5dslc] {
+        color: #6366f1;
+        text-decoration: none;
+    }
+
+.image-section[b-w45it5dslc] {
+    flex: 1 1 0;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .image-section img[b-w45it5dslc] {
+        width: 92%;
+        border-radius: 8px;
+        object-fit: cover;
+    }

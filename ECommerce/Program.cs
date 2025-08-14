@@ -1,11 +1,23 @@
 using ECommerce.Components;
-
+using ECommerce.Config;
+using ECommerce.Service.API;
+using ECommerce.Service.API.AuthService;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<ToastService>();
 
 builder.Services.AddRazorComponents();
+
+
+
+// Bind the "ApiSettings" section from appsettings.json to ApiSettings class
+builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
+
+// Register other services like ApiService, AuthService, etc.
+builder.Services.AddHttpClient<ApiService>();
+builder.Services.AddSingleton<ApiService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

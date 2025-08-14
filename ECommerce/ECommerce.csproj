@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <ScopedCssEnabled>true</ScopedCssEnabled>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,8 +13,6 @@
     <Folder Include="Migration\" />
     <Folder Include="Helpers\" />
     <Folder Include="Service\Extesntion\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
