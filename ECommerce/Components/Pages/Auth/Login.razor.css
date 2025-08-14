@@ -1,4 +1,6 @@
-﻿.container {
+﻿
+
+.container {
     position: absolute;
     top: 162px;
     left: 272px;
@@ -62,7 +64,7 @@
 }
 
     .sign-in-btn:hover {
-        background: #4f46e5;
+      background: #4f46e5;
     }
 
 .extra-links, .signup-link {
