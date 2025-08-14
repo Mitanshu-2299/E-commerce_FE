@@ -4,12 +4,13 @@
         <label class="select-label">@Label</label>
     }
 
-    <select class="select" @bind="SelectedValue" @bind:event="onchange">
+    <select class="select"
+            @bind="Value"
+            @bind:event="onchange">
         @if (!string.IsNullOrEmpty(Placeholder))
         {
             <option value="">@Placeholder</option>
         }
-
         @foreach (var option in Options)
         {
             <option value="@option.Value">@option.Text</option>
@@ -25,16 +26,12 @@
 @code {
     [Parameter] public string Label { get; set; }
     [Parameter] public string Placeholder { get; set; }
-    [Parameter] public string SelectedValue { get; set; }
-    [Parameter] public EventCallback<string> SelectedValueChanged { get; set; }
+
+    [Parameter] public string Value { get; set; }
+    [Parameter] public EventCallback<string> ValueChanged { get; set; }
+
     [Parameter] public List<SelectOption> Options { get; set; } = new();
     [Parameter] public string ErrorMessage { get; set; }
-
-    private async Task SelectedValueChangedHandler(string value)
-    {
-        SelectedValue = value;
-        await SelectedValueChanged.InvokeAsync(value);
-    }
 
     public class SelectOption
     {

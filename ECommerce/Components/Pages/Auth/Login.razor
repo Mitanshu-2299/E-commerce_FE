@@ -1,4 +1,6 @@
 ﻿@page "/login"
+@inject ECommerce.Service.API.AuthService.IAuthService AuthService
+@inject NavigationManager Navigation
 
 <div class="container">
     <div class="login-section">
@@ -11,7 +13,21 @@
             <label>Password</label>
             <input @bind="password" type="password" class="form-control" placeholder="Enter your password" />
         </div>
-        <button class="sign-in-btn" @onclick="performLogin">Sign In</button>
+
+        @* <PrimaryButton Icon="bi bi-box-arrow-in-right"
+                       Disabled="@isProcessing"
+                       OnClick="@performLogin">
+            Sign In
+        </PrimaryButton> *@
+        <button class="btn btn-primary" @onclick="@performLogin" disabled="@isProcessing">
+           Sign In</button>
+
+
+        @if (!string.IsNullOrEmpty(loginError))
+        {
+            <div class="alert alert-danger mt-2">@loginError</div>
+        }
+
         <div class="extra-links">
             <a href="#">Forgot password?</a>
         </div>
@@ -20,7 +36,6 @@
         </div>
     </div>
     <div class="image-section">
-       
         <img src="/images/login.jpg" alt="People in a meeting" />
     </div>
 </div>
@@ -28,8 +43,44 @@
 @code {
     private string email;
     private string password;
-    private void performLogin()
+    private bool isProcessing = false;
+    private string loginError;
+
+    private async Task performLogin()
     {
-        
+        isProcessing = true;
+        loginError = string.Empty;
+        try
+        {
+            // Construct request using the correct model class name and proeperties (fix typo in LoginRequest)
+            var request = new ECommerce.Model.AuthModel.LoginRequest
+            {
+                Email = email,
+                password = password
+            };
+
+            var response = await AuthService.LoginAsync(request);
+
+            if (response != null && response.StatusCode == 200)
+            {
+                // Example: store token somewhere (local storage or state)
+                var token = response.Data?.Token;
+
+                // For now, navigate to home or dashboard
+                Navigation.NavigateTo("/");
+            }
+            else
+            {
+                loginError = response?.Message ?? "Login failed. Please check your credentials.";
+            }
+        }
+        catch (Exception ex)
+        {
+            loginError = $"Login failed: {ex.Message}";
+        }
+        finally
+        {
+            isProcessing = false;
+        }
     }
 }

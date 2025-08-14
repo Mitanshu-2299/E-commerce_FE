@@ -1,5 +1,5 @@
 ﻿.primary-btn {
-    background-color: var(--primary-color, #007bff);
+    background-color: #636AE8FF;
     color: white;
     border-radius: 8px;
     padding: 8px 16px;
@@ -10,10 +10,11 @@
     align-items: center;
     gap: 0.5rem;
     transition: background-color 0.3s ease;
+    justify-content: center;
 }
 
     .primary-btn:hover:not(:disabled) {
-        background-color: #0056b3;
+        background-color: #636ae8ed;
     }
 
     .primary-btn:disabled {

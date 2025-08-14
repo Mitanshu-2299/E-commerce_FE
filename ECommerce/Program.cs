@@ -21,6 +21,15 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
+// Show detailed exceptions only in Development
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+}
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

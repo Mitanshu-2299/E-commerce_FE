@@ -1,6 +1,6 @@
 ﻿using ECommerce.Config;
 using ECommerce.Model.AuthModel;
-using Microsoft.AspNetCore.Identity.Data;
+
 using Microsoft.Extensions.Options;
 
 namespace ECommerce.Service.API.AuthService
