@@ -4,9 +4,11 @@ namespace ECommerce.Data.Model
 {
     public class RequestModelDemo
     {
-        [Required(ErrorMessage = "Please Enter the Password")]
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address format")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Please Enter the Password")]
-        public string password { get; set; }
+
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; }
     }
 }

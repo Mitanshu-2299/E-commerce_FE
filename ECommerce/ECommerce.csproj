@@ -16,8 +16,44 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Components\Pages\Auth\forgotPassword.razor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>forgotPassword.razor.css</DependentUpon>
+    </None>
+    <None Include="Components\Pages\Auth\signup.razor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>signup.razor.css</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazorise.Bootstrap5" Version="1.8.0" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Components\Pages\Auth\forgotPassword.razor.css">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>forgotPassword.razor.cs</LastGenOutput>
+    </None>
+    <None Update="Components\Pages\Auth\signup.razor.css">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>signup.razor.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Components\Pages\Auth\signup.razor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>signup.razor.css</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
