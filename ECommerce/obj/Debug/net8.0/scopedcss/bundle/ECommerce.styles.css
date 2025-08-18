@@ -60,7 +60,7 @@
     }
 /* _content/ECommerce/Components/Accounts/Shared/Buttons/PrimaryButton.razor.rz.scp.css */
 .primary-btn[b-9ar5d8xpai] {
-    background-color: var(--primary-color, #007bff);
+    background-color: #636AE8FF;
     color: white;
     border-radius: 8px;
     padding: 8px 16px;
@@ -71,10 +71,11 @@
     align-items: center;
     gap: 0.5rem;
     transition: background-color 0.3s ease;
+    justify-content: center;
 }
 
     .primary-btn:hover:not(:disabled)[b-9ar5d8xpai] {
-        background-color: #0056b3;
+        background-color: #636ae8ed;
     }
 
     .primary-btn:disabled[b-9ar5d8xpai] {
@@ -920,7 +921,10 @@ main[b-hm33a3ewq5] {
                 color: white;
                 box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
             }
+/* _content/ECommerce/Components/Pages/Auth/ForgotPassword.razor.rz.scp.css */
 /* _content/ECommerce/Components/Pages/Auth/Login.razor.rz.scp.css */
+
+
 .container[b-w45it5dslc] {
     position: absolute;
     top: 162px;
@@ -985,7 +989,7 @@ main[b-hm33a3ewq5] {
 }
 
     .sign-in-btn:hover[b-w45it5dslc] {
-        background: #4f46e5;
+      background: #4f46e5;
     }
 
 .extra-links[b-w45it5dslc], .signup-link[b-w45it5dslc] {
@@ -1013,3 +1017,7 @@ main[b-hm33a3ewq5] {
         border-radius: 8px;
         object-fit: cover;
     }
+/* _content/ECommerce/Components/Pages/Auth/Signup.razor.rz.scp.css */
+/* _content/ECommerce/Components/Pages/DashBoard/Dashboard.razor.rz.scp.css */
+body[b-pnv949d282] {
+}

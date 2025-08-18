@@ -1,27 +1,28 @@
-using ECommerce.Components;
+﻿using ECommerce.Components;
 using ECommerce.Config;
 using ECommerce.Service.API;
 using ECommerce.Service.API.AuthService;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
 builder.Services.AddSingleton<ToastService>();
 
-builder.Services.AddRazorComponents();
-
-
-
-// Bind the "ApiSettings" section from appsettings.json to ApiSettings class
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
 
-// Register other services like ApiService, AuthService, etc.
 builder.Services.AddHttpClient<ApiService>();
 builder.Services.AddSingleton<ApiService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
+
 var app = builder.Build();
 
-// Show detailed exceptions only in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -29,20 +30,16 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Error");
-}
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
+app.UseRouting();
+
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>();
+app.MapRazorComponents<App>()
+   .AddInteractiveServerRenderMode();
 
 app.Run();

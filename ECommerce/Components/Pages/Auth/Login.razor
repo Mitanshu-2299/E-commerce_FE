@@ -74,34 +74,34 @@
             var request = new ECommerce.Model.AuthModel.LoginRequest
             {
                 Email = requestModel.Email,
-                password = requestModel.Password  // keep casing that your API expects
+                password = requestModel.Password  
             };
 
             var response = await AuthService.LoginAsync(request);
 
             if (response != null && response.StatusCode == 200)
             {
-                // If your API returns a JWT, store it:
-                // (Adjust property name: Token / token / accessToken based on your response)
-                var token = response.Token ?? response.token ?? string.Empty;
+                var token = response.Data?.Token ?? string.Empty;
                 if (!string.IsNullOrWhiteSpace(token))
                 {
+                    // Save token in localStorage
                     await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
 
-                    // If using custom auth provider below, notify it:
+                    // If you wired up JwtAuthStateProvider
                     if (AuthStateProvider is JwtAuthStateProvider jwtProvider)
                     {
                         await jwtProvider.NotifyUserLoggedIn(token);
                     }
                 }
 
-                // Navigate. 'replace: true' avoids the user going back to /login on Back button.
+                // Navigate to dashboard
                 Navigation.NavigateTo("/dashboard", replace: true);
             }
             else
             {
                 loginError = response?.Message ?? "Login failed. Please check your credentials.";
             }
+
         }
         catch (Exception ex)
         {
