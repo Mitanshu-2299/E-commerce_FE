@@ -2,6 +2,7 @@
 using ECommerce.Config;
 using ECommerce.Service.API;
 using ECommerce.Service.API.AuthService;
+using ECommerce.Service.CountryService;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
 
@@ -12,12 +13,21 @@ builder.Services.AddSingleton<ToastService>();
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
 
-builder.Services.AddHttpClient<ApiService>();
-builder.Services.AddSingleton<ApiService>();
+// Register a HttpClient with BaseUrl (for direct injection)
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(APIEndPoints.BaseUrl) });
+
+
+// Register API related services
+builder.Services.AddScoped<ApiService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddHttpClient("ECommAPI", client =>
+{
+    client.BaseAddress = new Uri(APIEndPoints.BaseUrl);
+});
 
+// Authentication + Authorization
 builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
 
@@ -36,6 +46,9 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+// Optional: CORS if your API is remote
+// app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.UseAntiforgery();
 

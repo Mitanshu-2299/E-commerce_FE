@@ -10,7 +10,7 @@
     <div class="login-section">
         <h2>Welcome Back!</h2>
 
-        <!-- IMPORTANT: FormName is required in .NET 8 -->
+      
         <EditForm Model="requestModel" OnValidSubmit="performLogin" FormName="LoginForm">
             <DataAnnotationsValidator />
             @* <ValidationSummary /> *@
@@ -46,7 +46,7 @@
         </EditForm>
 
         <div class="extra-links mt-3">
-            <!-- DON'T use href="#" -->
+      
             <NavLink href="/forgot-password">Forgot password?</NavLink>
         </div>
         <div class="signup-link">

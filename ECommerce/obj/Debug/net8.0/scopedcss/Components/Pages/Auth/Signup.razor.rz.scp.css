@@ -1,5 +1,5 @@
-﻿/* Container */
-.signup-container {
+/* Container */
+.signup-container[b-dikunxprfa] {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
 }
 
 /* Card */
-.signup-card {
+.signup-card[b-dikunxprfa] {
     display: flex;
     background: #fff;
     border-radius: 12px;
@@ -18,7 +18,7 @@
     max-width: 95%;
 }
 
-.signup-form {
+.signup-form[b-dikunxprfa] {
     flex: 1;
     padding: 40px;
     max-height: 90vh; 
@@ -26,32 +26,32 @@
     scrollbar-width: auto; 
     scrollbar-color: #8b8b8b
 }
-    .signup-form h2 {
+    .signup-form h2[b-dikunxprfa] {
         margin-bottom: 20px;
         font-size: 22px;
         font-weight: 600;
     }
 
-    .signup-form h4 {
+    .signup-form h4[b-dikunxprfa] {
         margin: 25px 0 15px;
         font-size: 18px;
         font-weight: 500;
     }
 
 /* Row Layout */
-.form-row {
+.form-row[b-dikunxprfa] {
     display: flex;
     gap: 15px;
 }
 
-.form-group {
+.form-group[b-dikunxprfa] {
     flex: 1;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
-    .form-group label {
+    .form-group label[b-dikunxprfa] {
         font-size: 14px;
         margin-bottom: 5px;
         font-weight: 500;
@@ -60,13 +60,13 @@
 
 
 
-        .form-group label::after {
+        .form-group label[b-dikunxprfa]::after {
             content: "*";
             color: red;
             margin-left: 3px;
         }
 /* Inputs */
-.form-control, input[type="file"] {
+.form-control[b-dikunxprfa], input[type="file"][b-dikunxprfa] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -74,13 +74,13 @@
     outline: none;
 }
 
-    .form-control:focus {
+    .form-control:focus[b-dikunxprfa] {
         border-color: #6c63ff;
         box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
     }
 
 /* Button */
-.btn-submit {
+.btn-submit[b-dikunxprfa] {
     width: 100%;
     padding: 12px;
     background: #6c63ff;
@@ -93,17 +93,17 @@
     margin-top: 10px;
 }
 
-    .btn-submit:hover {
+    .btn-submit:hover[b-dikunxprfa] {
         background: #5a54e0;
     }
 
 /* Image Side */
-.signup-image {
+.signup-image[b-dikunxprfa] {
     flex: 1;
     background: #f0f0f0;
 }
 
-    .signup-image img {
+    .signup-image img[b-dikunxprfa] {
         width: 100%;
         height: 100%;
         object-fit: cover;
